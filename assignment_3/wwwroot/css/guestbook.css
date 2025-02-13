@@ -1,0 +1,11 @@
+﻿h2{
+    margin: 5px;
+    font-size: xxx-large;
+}
+
+#entry{
+    border: black solid;
+    background-color: whitesmoke;
+    margin: 5px;
+    padding: 10px;
+}

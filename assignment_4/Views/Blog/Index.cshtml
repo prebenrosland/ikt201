@@ -1,0 +1,24 @@
+﻿@model IEnumerable<BlogPost>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>@ViewBag.UpdatedPost</h2>
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="Add">Add post</a>
+
+
+@if (Model != null)
+{
+    @foreach (var post in Model)
+    {
+        <partial name="_PostPartial" model="post" />
+        <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="Edit" asp-route-postId="@post.Id">Edit post</a>
+    }
+}
+else
+{
+    <p>No blog posts available.</p>
+}

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Entry>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<a href="https://localhost:5086/Guestbook/Add"></a>
+
+<h2>Guestbook Entries</h2>
+@if (!Model.Any())
+{
+    <p>No entries to display.</p>
+}
+else
+{
+    <div>
+        @foreach (var entry in Model)
+        {
+            <div id="entry">
+                <h3>@entry.Title</h3>
+                <p>@entry.Message</p>
+                <p>-@entry.Name</p>
+            </div>
+        }
+    </div>
+}
